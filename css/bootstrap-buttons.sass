@@ -1,0 +1,64 @@
+// Simply define replacement colors for each of the Bootstrap button classes
+
+$defaultColor: #e7e7e7
+$primaryColor: #E97F02
+$successColor: #7c8c0e
+$warningColor: #d6ae00
+$dangerColor: #BD1550
+$inverseColor: #85126f
+$infoColor: #333
+
+
+// No need to touch the stuff below, unless you want to. But feel free to tinker, to make your buttons even more customized and less Bootstrap-y.
+
+@mixin button-creator($color)
+  background: $color
+  //remove the gradient mixin below if you want a flat button
+  @include gradient-creator ($color)
+  //end gradient mixin
+  
+  border-color: darken($color, 2%)
+  border-bottom-color: darken($color, 5%)
+  box-shadow: inset 0 1px 0 lighten($color, 40%), 0 1px 0 rgba(black, 0.1)
+  
+  .btn-group &
+    &.dropdown-toggle
+      box-shadow: inset 0 1px 0 lighten($color, 40%), 0 1px 0 rgba(black, 0.1)
+  
+  .btn-group.open &
+    &.dropdown-toggle
+      background: darken($color, 2%) 
+  
+  &.disabled, &.disabled:hover, &.disabled:active
+    background: lighten($color, 20%)
+    border: none
+    box-shadow: none
+  
+  &:hover, &:focus
+    background: lighten($color, 5%)
+    //remove the gradient mixin below if you want a flat button
+    @include gradient-creator ( lighten($color, 5%) )
+    //end gradient mixin
+  
+  &:active
+    background: darken($color, 2%)
+    box-shadow: inset 0 1px 1px darken($color, 20%), 0 1px 0 rgba(black, 0.1)
+
+
+@mixin gradient-creator ($color)
+  background: -moz-linear-gradient(top,lighten($color,14%),$color)
+  background: -webkit-gradient(linear,0 0,0 100%,from(lighten($color,14%)),to($color))
+  background: -webkit-linear-gradient(top,lighten($color,14%),$color)
+  background: -o-linear-gradient(top,lighten($color,14%),$color)
+  background: linear-gradient(to bottom,lighten($color,14%),$color)
+
+
+
+$buttons: primary $primaryColor, success $successColor, warning $warningColor, danger $dangerColor, inverse $inverseColor, info $infoColor
+
+.btn
+  @include button-creator ($defaultColor)
+  @each $color in (primary $primaryColor,success $successColor,warning $warningColor,danger $dangerColor,inverse $inverseColor, info $infoColor)
+    &.btn-#{nth($color, 1)}
+      @include button-creator(nth($color, 2))
+      color: white

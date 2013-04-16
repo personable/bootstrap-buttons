@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="no-js oldie ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js oldie ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bootstrap buttons</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-buttons.css">
+  </head>
+  
+  
+  <body style="padding: 10px;">
+    <div style="text-align: center">
+      <h4>Don't settle for the Bootstrap button defaults! Like your in-laws said to your spouse after you proposed: You can do better.</h4>
+      <p>
+        <button class="btn">.btn</button>
+        <button class="btn btn-primary">.btn-primary</button>
+        <button class="btn btn-success">.btn-success</button>
+        <button class="btn btn-warning">.btn-warning</button>
+        <button class="btn btn-danger">.btn-danger</button>
+        <button class="btn btn-info">.btn-info</button>
+        <button class="btn btn-inverse">.btn-inverse</button>
+      </p>
+      <p>^^ color palette from sugar! via <a href="http://www.colourlovers.com/palette/848743/(%E2%97%95_%E2%80%9D_%E2%97%95)">ColourLovers</a></p>
+    </div>
+    <hr>
+    <h2>Quick and dirty Bootstrap button color customization</h2>
+    <div class="btn-group">
+      <button class="btn btn-success"><i class="icon-download icon-white"></i> Select your download</button>
+      <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Download this whole example</a></li>
+        <li><a href="css/bootstrap-buttons.sass">Download just <strong>bootstrap-buttons.sass</strong></a></li>
+      </ul>
+    </div>
+        
+    <h3>Instructions</h3>
+    <ol>
+      <li>Download <strong><a href="css/bootstrap-buttons.sass">bootstrap-buttons.sass</a></strong></li>
+      <li>Replace the HEX values at the top of <strong>bootstrap-buttons.sass</strong> with your project's own kickass colors (<a href="http://0to255.com">0to255.com</a> is a good resource, if you need to find slightly lighter or darker tints to make your buttons all look good together)<br /><img src="img/screenshot2.png" width="322" height="167" alt="screenshot showing how to replace Bootstrap default button colors" /></li>
+      <li>Compile <strong>bootstrap-buttons.sass</strong> to a CSS file that is included BELOW Bootstrap's style sheet. (If you don't want to download the SASS gem and generally be anywhere near the command line, I recommend <a href="http://incident57.com/codekit/">CodeKit</a> for compiling SASS.) <br /><br /><img src="img/screenshot.png" width="502" height="159" alt="screenshot showing how to include Bootstrap button CSS in the document head" /></li>
+      <li>Pat yourself on the back. You've saved the web from another set of default Bootstrap buttons.</li>
+    </ol>
+    
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
